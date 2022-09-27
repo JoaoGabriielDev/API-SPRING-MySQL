@@ -1,4 +1,6 @@
-package com.challenge.carsales.entities;
+package com.challenge.carsales.entitie;
+
+import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_store")
+@Data
 public class Store   {
 	
 	@Id
@@ -16,25 +19,6 @@ public class Store   {
 	private long id;
 	private String category;
 	
-	public Store() {	
+	public Store() {
 	}
-	
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-    
-	
-	
-	
 }
