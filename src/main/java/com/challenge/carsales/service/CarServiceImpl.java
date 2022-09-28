@@ -46,17 +46,4 @@ public class CarServiceImpl implements CarService {
     public List<Car> listCar(){
         return carRepository.findAll();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
