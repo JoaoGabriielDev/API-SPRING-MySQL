@@ -31,7 +31,7 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public Car updateCar (Car car, Long id){
+    public Car updateCar(Car car, Long id){
             Optional<Car> carUpdate = findById(id);
 
             carUpdate.get().setNome(car.getNome());

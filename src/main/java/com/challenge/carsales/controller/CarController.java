@@ -11,7 +11,6 @@ import java.util.Optional;
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/car/")
-
 public class CarController {
 
     @Autowired
@@ -26,4 +25,16 @@ public class CarController {
     public ResponseEntity<Car> createdCar(@RequestBody Car car) {
         return ResponseEntity.ok().body(carService.createCar(car));
     }
+
+    @PutMapping("atualizar/{id}")
+    public Car updateCar(@PathVariable Long id, @RequestBody Car car){
+        return carService.updateCar(car, id);
+    }
+
+    @DeleteMapping("delete/{id}")
+    public Optional<Car> deleteCar(@PathVariable Long id, @RequestBody Car car){
+        carService.deleteCar(car, id);
+        return null;
+    }
+
 }
