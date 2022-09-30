@@ -3,9 +3,11 @@ package com.challenge.carsales.controller;
 import com.challenge.carsales.entitie.Car;
 import com.challenge.carsales.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -26,7 +28,7 @@ public class CarController {
         return ResponseEntity.ok().body(carService.createCar(car));
     }
 
-    @PutMapping("atualizar/{id}")
+    @PutMapping("update/{id}")
     public Car updateCar(@PathVariable Long id, @RequestBody Car car){
         return carService.updateCar(car, id);
     }
@@ -35,6 +37,14 @@ public class CarController {
     public Optional<Car> deleteCar(@PathVariable Long id, @RequestBody Car car){
         carService.deleteCar(car, id);
         return null;
+    }
+
+    @GetMapping(value = "list")
+    @ResponseBody
+    public ResponseEntity<List<Car>> listCar(){
+        List<Car> car = carService.listCar();
+        return new ResponseEntity<List<Car>>(car, HttpStatus.OK);
+
     }
 
 }
