@@ -22,6 +22,28 @@ public class Cliente {
     @Column(name = "usuario")
     private String name;
 
+
+    @Column(name = "cpf", length = 20, nullable = true)
+    private Long cpf;
+
     @Column(name = "email")
     private String email;
+
+    @Column(name = "telefone")
+    private Long telefone;
+
+    @Column(name = "endereço")
+    private String endereco;
+
+    @Column(name = "bairro")
+    private String bairro;
+
+    @Column(name = "cep")
+    private float cep;
+
+    @Column(name = "cidade")
+    private String cidade;
+
+    @Column(name = "estado")
+    private String estado;
 }
