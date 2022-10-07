@@ -23,7 +23,7 @@ public class Cliente {
     private String name;
 
 
-    @Column(name = "cpf", length = 20, nullable = true)
+    @Column(name = "cpf")
     private Long cpf;
 
     @Column(name = "email")

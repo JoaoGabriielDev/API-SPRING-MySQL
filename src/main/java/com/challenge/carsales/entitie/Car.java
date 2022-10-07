@@ -25,4 +25,31 @@ public class Car {
 
 	@Column(name = "marca", nullable = true)
 	private String marca;
+
+	@Column(name = "cor")
+	private String cor;
+
+	@Column(name = "ano")
+	private Long ano;
+
+	@Column(name = "potencia")
+	private double potencia;
+
+	@Column(name = "quilometragem")
+	private double quilometragem;
+
+	@Column(name = "cambio")
+	private String cambio;
+
+	@Column(name = "portas")
+	private String portas;
+
+	@Column(name = "placa")
+	private String placa;
+
+	@Column(name = "preço")
+	private double preco;
+
+
+
 }
