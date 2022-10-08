@@ -20,9 +20,10 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public void deleteCar(Car car, Long id){
+    public Optional<Car> deleteCar(Car car, Long id){
         Optional<Car> carDelete = findById(id);
         carRepository.delete(carDelete.get());
+        return carDelete;
     }
 
     @Override

@@ -35,11 +35,10 @@ public class CarController {
 
     @DeleteMapping("delete/{id}")
     public Optional<Car> deleteCar(@PathVariable Long id, @RequestBody Car car){
-        carService.deleteCar(car, id);
-        return null;
+        return carService.deleteCar(car, id);
     }
 
-    @GetMapping(value = "list")
+    @GetMapping(value = "listartodos")
     @ResponseBody
     public ResponseEntity<List<Car>> listCar(){
         List<Car> car = carService.listCar();
