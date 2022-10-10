@@ -5,6 +5,7 @@ import com.challenge.carsales.repositorie.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -12,6 +13,11 @@ public class ClienteServiceImpl implements ClienteService{
 
     @Autowired
      private ClienteRepository clienteRepository;
+
+    @Override
+    public List<Cliente> listCliente(){
+        return clienteRepository.findAll();
+    }
 
     @Override
      public Optional<Cliente> findById(Long id){
@@ -25,9 +31,12 @@ public class ClienteServiceImpl implements ClienteService{
         return clienteDelete;
      }
 
+     @Override
      public Cliente createCliente(Cliente cliente){
         return clienteRepository.save(cliente);
      }
+
+
 
 
 
