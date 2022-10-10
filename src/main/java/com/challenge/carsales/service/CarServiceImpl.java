@@ -37,6 +37,14 @@ public class CarServiceImpl implements CarService {
 
             carUpdate.get().setNome(car.getNome());
             carUpdate.get().setMarca(car.getMarca());
+            carUpdate.get().setCor(car.getCor());
+            carUpdate.get().setAno(car.getAno());
+            carUpdate.get().setPotencia(car.getPotencia());
+            carUpdate.get().setQuilometragem(car.getQuilometragem());
+            carUpdate.get().setCambio(car.getCambio());
+            carUpdate.get().setPortas(car.getPortas());
+            carUpdate.get().setPlaca(car.getPlaca());
+            carUpdate.get().setPreco(car.getPreco());
 
             Car carSaved = carRepository.save(carUpdate.get());
 

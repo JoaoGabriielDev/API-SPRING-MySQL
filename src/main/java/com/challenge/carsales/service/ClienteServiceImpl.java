@@ -32,7 +32,7 @@ public class ClienteServiceImpl implements ClienteService{
      }
 
      @Override
-     public Cliente createCliente(Cliente cliente){
+     public Cliente createCliente(Cliente cliente)      {
         return clienteRepository.save(cliente);
      }
 
