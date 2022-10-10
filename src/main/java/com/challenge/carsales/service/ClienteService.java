@@ -10,5 +10,6 @@ public interface ClienteService {
 
     Optional<Cliente> deleteCliente (Cliente cliente, Long id);
 
+    Cliente createCliente(Cliente cliente);
 
 }

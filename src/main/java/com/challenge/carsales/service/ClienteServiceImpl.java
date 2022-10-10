@@ -25,6 +25,9 @@ public class ClienteServiceImpl implements ClienteService{
         return clienteDelete;
      }
 
+     public Cliente createCliente(Cliente cliente){
+        return clienteRepository.save(cliente);
+     }
 
 
 
