@@ -15,4 +15,6 @@ public interface ClienteService {
 
     Cliente createCliente(Cliente cliente);
 
+    Optional<Cliente> updateCliente(Cliente cliente, Long id);
+
 }

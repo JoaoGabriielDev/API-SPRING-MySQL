@@ -36,10 +36,22 @@ public class ClienteServiceImpl implements ClienteService{
         return clienteRepository.save(cliente);
      }
 
+     @Override
+     public Optional<Cliente> updateCliente(Cliente cliente, Long id){
+        Optional<Cliente> clienteUpdate = findById(id);
 
+              clienteUpdate.get().setName(cliente.getName());
+              clienteUpdate.get().setCpf(cliente.getCpf());
+              clienteUpdate.get().setEmail(cliente.getEmail());
+              clienteUpdate.get().setTelefone(cliente.getTelefone());
+              clienteUpdate.get().setEndereco(cliente.getEndereco());
+              clienteUpdate.get().setBairro(cliente.getBairro());
+              clienteUpdate.get().setCep(cliente.getCep());
+              clienteUpdate.get().setCidade(cliente.getCidade());
+              clienteUpdate.get().setEstado(cliente.getEstado());
 
+              Cliente clienteSaved = clienteRepository.save(clienteUpdate.get());
 
-
-
-
+             return Optional.of(clienteSaved);
+     }
 }
