@@ -39,7 +39,6 @@ public class CarController {
     }
 
     @GetMapping(value = "listarCarros")
-    @ResponseBody
     public ResponseEntity<List<Car>> listCar(){
         List<Car> car = carService.listCar();
         return new ResponseEntity<List<Car>>(car, HttpStatus.OK);
