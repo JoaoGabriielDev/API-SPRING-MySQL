@@ -38,7 +38,7 @@ public class CarController {
         return carService.deleteCar(car, id);
     }
 
-    @GetMapping(value = "listartodos")
+    @GetMapping(value = "listarCarros")
     @ResponseBody
     public ResponseEntity<List<Car>> listCar(){
         List<Car> car = carService.listCar();
