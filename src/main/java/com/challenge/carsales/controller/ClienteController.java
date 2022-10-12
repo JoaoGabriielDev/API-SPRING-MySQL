@@ -30,11 +30,19 @@ public class ClienteController {
         return clienteService.findById(id);
     }
 
-    @PostMapping(value = "create")
+    @PostMapping("create")
     public ResponseEntity<Cliente> createdCliente(@RequestBody Cliente cliente){
         return ResponseEntity.ok().body(clienteService.createCliente(cliente));
     }
 
+    @DeleteMapping("delete/{id}")
+    public Optional<Cliente> deleteCliente(@PathVariable Cliente cliente, @RequestBody Long id){
+        return clienteService.deleteCliente(cliente, id);
+    }
 
+    @PutMapping(value = "update/{id}")
+    public Optional<Cliente> updateCliente(@PathVariable Cliente cliente, @RequestBody Long id){
+        return clienteService.updateCliente(cliente, id);
+    }
 
 }
