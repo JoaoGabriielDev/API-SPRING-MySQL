@@ -39,7 +39,7 @@ public class Cliente {
     private String bairro;
 
     @Column(name = "cep")
-    private float cep;
+    private Long cep;
 
     @Column(name = "cidade")
     private String cidade;

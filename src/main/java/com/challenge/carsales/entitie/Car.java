@@ -33,10 +33,10 @@ public class Car {
 	private Long ano;
 
 	@Column(name = "potencia")
-	private Long potencia;
+	private float potencia;
 
 	@Column(name = "quilometragem")
-	private Long quilometragem;
+	private float quilometragem;
 
 	@Column(name = "cambio")
 	private String cambio;
