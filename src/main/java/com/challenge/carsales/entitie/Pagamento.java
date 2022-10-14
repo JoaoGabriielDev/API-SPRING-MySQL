@@ -15,12 +15,12 @@ import java.util.Objects;
 @Setter
 @NoArgsConstructor @AllArgsConstructor
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Pagamento implements Serializable {
+public abstract class Pagamento implements Serializable {
      private static final long serialVersionUID = 1l;
 
      @Id
      private Long id;
-     private EstadoPagamento estado;
+     private Long estado;
 
      @OneToOne
      @JoinColumn(name = "pedido_id")

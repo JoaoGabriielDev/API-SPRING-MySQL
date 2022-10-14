@@ -13,7 +13,7 @@ import java.util.Objects;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor @AllArgsConstructor
+@NoArgsConstructor
 public class Pedido implements Serializable {
     private static final long serialVersionUID = 1l;
 
@@ -28,6 +28,13 @@ public class Pedido implements Serializable {
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
+
+    public Pedido(Long id, Date instante, Cliente cliente) {
+        super();
+        this.id = id;
+        this.instante = instante;
+        this.cliente = cliente;
+    }
 
     @Override
     public boolean equals(Object o) {
