@@ -49,5 +49,6 @@ public class Cliente {
     @Column(name = "estado")
     private String estado;
 
+    @OneToMany(mappedBy = "cliente")
     private List<Pedido> pedidos = new ArrayList<>();
 }
