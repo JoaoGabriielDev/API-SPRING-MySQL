@@ -17,7 +17,7 @@ import java.util.Set;
 @Table(name = "car")
 public class Car {
 
-	@ManyToMany
+	@OneToMany(mappedBy = "id.produto")
 	private Set<CarPedido> itens = new HashSet<>();
 
 	@Id

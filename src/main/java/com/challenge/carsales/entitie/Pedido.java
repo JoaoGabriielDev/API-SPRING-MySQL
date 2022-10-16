@@ -30,6 +30,7 @@ public class Pedido implements Serializable {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
+    @OneToMany(mappedBy = "id.pedido")
     private Set<CarPedido> itens = new HashSet<>();
     // garantir a não x de itens
 

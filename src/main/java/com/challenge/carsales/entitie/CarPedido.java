@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import java.io.Serializable;
 import java.util.Objects;
@@ -17,7 +18,9 @@ public class CarPedido implements Serializable {
     private static final long serialVersionUID = 1l;
 // classe de associação
 
+    @EmbeddedId
     private CarPedidoPK id = new CarPedidoPK();
+    // classe auxiliar
 
     private Long quantidade;
     private Double preco;
