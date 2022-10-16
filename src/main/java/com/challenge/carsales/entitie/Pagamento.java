@@ -1,5 +1,6 @@
 package com.challenge.carsales.entitie;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,7 @@ public abstract class Pagamento implements Serializable {
      private Long id;
      private Long estado;
 
+     @JsonBackReference
      @OneToOne
      @JoinColumn(name = "pedido_id")
      @MapsId

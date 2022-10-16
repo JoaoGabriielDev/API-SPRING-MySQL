@@ -1,5 +1,6 @@
 package com.challenge.carsales.entitie;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -49,6 +50,7 @@ public class Cliente {
     @Column(name = "estado")
     private String estado;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "cliente")
     private List<Pedido> pedidos = new ArrayList<>();
 }

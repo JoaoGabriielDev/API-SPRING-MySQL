@@ -1,5 +1,7 @@
 package com.challenge.carsales.entitie;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,11 +23,15 @@ public class Pedido implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private Date instante;
 
+    @JsonManagedReference
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "pedido")
     private Pagamento pagamento;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;

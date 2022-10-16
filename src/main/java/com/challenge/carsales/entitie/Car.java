@@ -1,5 +1,6 @@
 package com.challenge.carsales.entitie;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,6 +18,7 @@ import java.util.Set;
 @Table(name = "car")
 public class Car {
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "id.car")
 	private Set<CarPedido> itens = new HashSet<>();
 

@@ -1,5 +1,6 @@
 package com.challenge.carsales.entitie;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,7 @@ public class CarPedido implements Serializable {
     private static final long serialVersionUID = 1l;
 // classe de associação
 
+    @JsonIgnore
     @EmbeddedId
     private CarPedidoPK id = new CarPedidoPK();
     // classe auxiliar
