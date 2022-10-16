@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity
@@ -14,6 +16,9 @@ import javax.persistence.*;
 @NoArgsConstructor @AllArgsConstructor
 @Table(name = "car")
 public class Car {
+
+	@ManyToMany
+	private Set<CarPedido> itens = new HashSet<>();
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
