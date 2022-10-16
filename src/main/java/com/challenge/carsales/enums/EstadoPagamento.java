@@ -22,18 +22,18 @@ public enum EstadoPagamento {
         return descricao;
     }
 
-    public static EstadoPagamento toEnum(Integer id) {
+    public static EstadoPagamento toEnum(Integer cod) {
 
-        if (id == null) {
+        if (cod == null) {
             return null;
         }
 
         for (EstadoPagamento x : EstadoPagamento.values()) {
-            if (id.equals(x.getCod())) {
+            if (cod.equals(x.getCod())) {
                 return x;
             }
         }
-        throw new IllegalArgumentException("Id inválido " + id);
+        throw new IllegalArgumentException("Id inválido " + cod);
     }
 }
 

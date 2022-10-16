@@ -1,6 +1,5 @@
 package com.challenge.carsales.entitie;
 
-import com.challenge.carsales.enums.EstadoPagamento;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
