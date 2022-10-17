@@ -20,7 +20,7 @@ public abstract class Pagamento implements Serializable {
 
      @Id
      private Long id;
-     private Long estado;
+     private String estado;
 
      @JsonBackReference
      @OneToOne

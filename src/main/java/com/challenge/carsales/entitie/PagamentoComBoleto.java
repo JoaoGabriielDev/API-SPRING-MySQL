@@ -22,7 +22,7 @@ public class PagamentoComBoleto extends Pagamento{
     @JsonFormat(pattern = "dd/MM/yyyy")
     private Date dataPagamento;
 
-    public PagamentoComBoleto(Long id, Long estado, Pedido pedido, Date dataVencimento, Date dataPagamento){
+    public PagamentoComBoleto(Long id, String estado, Pedido pedido, Date dataVencimento, Date dataPagamento){
         super(id, estado, pedido);
         this.dataVencimento = dataVencimento;
         this.dataPagamento = dataPagamento;
