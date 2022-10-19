@@ -16,7 +16,7 @@ import java.util.Optional;
 public class ClienteController {
 
     @Autowired
-     private ClienteService clienteService;
+    private ClienteService clienteService;
 
 
     @GetMapping(value = "listarClientes")

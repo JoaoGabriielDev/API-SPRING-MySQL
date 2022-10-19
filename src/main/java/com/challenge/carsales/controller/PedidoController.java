@@ -19,13 +19,20 @@ public class PedidoController {
     private PedidoService pedidoService;
 
     @GetMapping(value = "listarPedidos")
-    public ResponseEntity<List<Pedido>> listPedido(){
-         List<Pedido> pedido = pedidoService.listPedido();
-         return new ResponseEntity<List<Pedido>>(pedido, HttpStatus.OK);
+    public ResponseEntity<List<Pedido>> listPedido() {
+        List<Pedido> pedido = pedidoService.listPedido();
+        return new ResponseEntity<List<Pedido>>(pedido, HttpStatus.OK);
     }
 
     @GetMapping("{id}")
-    public Optional<Pedido> getIdPedido(@PathVariable Long id){
+    public Optional<Pedido> getIdPedido(@PathVariable Long id) {
         return pedidoService.findById(id);
     }
+
+    @GetMapping("cliente/{id}")
+    public ResponseEntity<List<Pedido>> listPedidosPorCliente(@PathVariable Long id) {
+        List<Pedido> pedido = pedidoService.findByClient(id);
+        return new ResponseEntity<List<Pedido>>(pedido, HttpStatus.OK);
+    }
+
 }
