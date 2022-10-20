@@ -1,6 +1,5 @@
 package com.challenge.carsales.enums;
 
-
 public enum EstadoPagamento {
 
     PENDENTE(1, "Pendente"),
