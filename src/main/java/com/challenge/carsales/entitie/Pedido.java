@@ -7,10 +7,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Entity
 @Getter
@@ -43,6 +42,14 @@ public class Pedido implements Serializable {
         this.cliente = cliente;
     }
 
+    public double getValorTotal() {
+        double soma = 0.0;
+        for (CarPedido ip : itens) {
+            soma = soma + ip.getPreco();
+        }
+        return soma;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -55,4 +62,27 @@ public class Pedido implements Serializable {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    @Override
+    public String toString() {
+        NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        StringBuilder builder = new StringBuilder();
+        builder.append("Pedido número: ");
+        builder.append(getId());
+        builder.append(", Instante: ");
+        builder.append(sdf.format(getInstante()));
+        builder.append(", Cliente: ");
+        builder.append(getCliente().getName());
+        builder.append(", Situação do pagamento: ");
+        builder.append(getPagamento().getEstado());
+        builder.append("\nDetalhes:\n");
+        for (CarPedido ip : getItens()) {
+            builder.append(ip.toString());
+        }
+        builder.append("Valor total: ");
+        builder.append(nf.format(getValorTotal()));
+        return builder.toString();
+    }
+
 }

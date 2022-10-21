@@ -2,6 +2,7 @@ package com.challenge.carsales.entitie;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +12,7 @@ import java.util.Date;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
 public class PagamentoComBoleto extends Pagamento{
     private static final long serialVersionUID = 1l;
 
@@ -20,10 +22,4 @@ public class PagamentoComBoleto extends Pagamento{
     @JsonFormat(pattern = "dd/MM/yyyy")
     private Date dataPagamento;
 
-    public PagamentoComBoleto(Long id, String estado, Pedido pedido, Date dataVencimento, Date dataPagamento){
-        super(id, estado, pedido);
-        this.dataVencimento = dataVencimento;
-        this.dataPagamento = dataPagamento;
-
-    }
 }
