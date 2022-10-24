@@ -1,14 +1,13 @@
-package com.challenge.carsales.entitie;
+package com.challenge.carsales.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Entity
@@ -25,15 +24,18 @@ public class Pedido implements Serializable {
     @JsonFormat(pattern = "dd/MM/yyyy")
     private Date instante;
 
+    @JsonManagedReference
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "pedido")
     private Pagamento pagamento;
 
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
     @OneToMany(mappedBy = "id.pedido")
     private Set<CarPedido> itens = new HashSet<>();
+    // garantir a não x de itens
 
     public Pedido(Long id, Date instante, Cliente cliente) {
         super();
@@ -62,27 +64,4 @@ public class Pedido implements Serializable {
     public int hashCode() {
         return Objects.hash(id);
     }
-
-    @Override
-    public String toString() {
-        NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        StringBuilder builder = new StringBuilder();
-        builder.append("Pedido número: ");
-        builder.append(getId());
-        builder.append(", Instante: ");
-        builder.append(sdf.format(getInstante()));
-        builder.append(", Cliente: ");
-        builder.append(getCliente().getName());
-        builder.append(", Situação do pagamento: ");
-        builder.append(getPagamento().getEstado());
-        builder.append("\nDetalhes:\n");
-        for (CarPedido ip : getItens()) {
-            builder.append(ip.toString());
-        }
-        builder.append("Valor total: ");
-        builder.append(nf.format(getValorTotal()));
-        return builder.toString();
-    }
-
 }

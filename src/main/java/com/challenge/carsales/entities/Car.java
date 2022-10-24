@@ -1,4 +1,4 @@
-package com.challenge.carsales.entitie;
+package com.challenge.carsales.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
@@ -20,10 +20,10 @@ public class Car {
 	@Column(name = "id")
 	private Long id;
 
-	@Column(name = "nome", length = 20, nullable = true)
+	@Column(name = "nome")
 	private String nome;
 
-	@Column(name = "marca", nullable = true)
+	@Column(name = "marca")
 	private String marca;
 
 	@Column(name = "cor")

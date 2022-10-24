@@ -1,4 +1,4 @@
-package com.challenge.carsales.entitie;
+package com.challenge.carsales.entities;
 
 import lombok.Getter;
 import lombok.Setter;

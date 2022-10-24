@@ -1,6 +1,6 @@
-package com.challenge.carsales.repositorie;
+package com.challenge.carsales.repositories;
 
-import com.challenge.carsales.entitie.Cliente;
+import com.challenge.carsales.entities.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {

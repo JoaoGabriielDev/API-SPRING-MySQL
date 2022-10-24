@@ -1,6 +1,6 @@
-package com.challenge.carsales.service;
+package com.challenge.carsales.services;
 
-import com.challenge.carsales.entitie.Car;
+import com.challenge.carsales.entities.Car;
 
 import java.util.List;
 import java.util.Optional;

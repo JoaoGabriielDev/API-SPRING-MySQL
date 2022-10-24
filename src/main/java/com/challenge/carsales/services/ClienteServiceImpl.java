@@ -1,7 +1,7 @@
-package com.challenge.carsales.service;
+package com.challenge.carsales.services;
 
-import com.challenge.carsales.entitie.Cliente;
-import com.challenge.carsales.repositorie.ClienteRepository;
+import com.challenge.carsales.entities.Cliente;
+import com.challenge.carsales.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
-package com.challenge.carsales.controller;
+package com.challenge.carsales.controllers;
 
-import com.challenge.carsales.entitie.Car;
-import com.challenge.carsales.service.CarService;
+import com.challenge.carsales.entities.Car;
+import com.challenge.carsales.services.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
