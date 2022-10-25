@@ -24,9 +24,8 @@ public interface EmailService {
     @Autowired
     private JavaMailSender emailSender;
 
-    public Email sendEmail(Email email) {
+    default Email sendEmail(Email email) {
         email.setSendDateEmail(LocalDateTime.now());
-        Email email;
         try{
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom(email.getEmailFrom());
@@ -43,11 +42,11 @@ public interface EmailService {
         }
     }
 
-    public Page<Email> findAll(Pageable pageable) {
-        return  emailRepository.findAll(pageable);
+     default Page<Email> findAll(Pageable pageable) {
+        return  emailRepository.findAll((org.springframework.data.domain.Pageable) pageable);
     }
 
-    public Optional<Email> findById(UUID emailId) {
+    default Optional<Email> findById(UUID emailId) {
         return emailRepository.findById(emailId);
     }
 }
