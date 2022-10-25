@@ -14,6 +14,9 @@ public class PedidoServiceImpl implements PedidoService {
     @Autowired
     private PedidoRepository pedidoRepository;
 
+    @Autowired
+    private ClienteService clienteService;
+
     @Override
     public List<Pedido> listPedido() {
         return pedidoRepository.findAll();

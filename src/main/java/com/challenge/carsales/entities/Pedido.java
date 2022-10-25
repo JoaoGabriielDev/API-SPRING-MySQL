@@ -8,6 +8,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Entity
@@ -64,4 +66,5 @@ public class Pedido implements Serializable {
     public int hashCode() {
         return Objects.hash(id);
     }
+
 }
