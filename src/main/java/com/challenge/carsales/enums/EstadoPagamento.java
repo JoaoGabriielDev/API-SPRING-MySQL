@@ -1,5 +1,8 @@
 package com.challenge.carsales.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum EstadoPagamento {
 
     PENDENTE(1, "Pendente"),
@@ -13,13 +16,8 @@ public enum EstadoPagamento {
         this.cod = cod;
         this.descricao = descricao;
     }
-    public int getCod() {
-        return cod;
-    }
 
-    public String getDescricao() {
-        return descricao;
-    }
+
 
     public static EstadoPagamento toEnum(Integer cod) {
 

@@ -15,7 +15,7 @@ public class PedidoServiceImpl implements PedidoService {
     private PedidoRepository pedidoRepository;
 
     @Autowired
-    private ClienteService clienteService;
+    private EmailService emailService;
 
     @Override
     public List<Pedido> listPedido() {
@@ -36,6 +36,7 @@ public class PedidoServiceImpl implements PedidoService {
 
     @Override
     public Pedido createPedido(Pedido pedido) {
+        emailService.sendOrderConfirmationEmail(pedido);
         return pedidoRepository.save(pedido);
     }
 
