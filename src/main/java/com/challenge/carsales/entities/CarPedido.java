@@ -34,6 +34,10 @@ public class CarPedido implements Serializable {
         this.preco = preco;
     }
 
+    public double getSubTotal() {
+        return (preco) * quantidade;
+    }
+
     @JsonIgnore
     public Pedido getPedido() {
         return id.getPedido();

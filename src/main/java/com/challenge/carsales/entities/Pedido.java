@@ -37,7 +37,6 @@ public class Pedido implements Serializable {
 
     @OneToMany(mappedBy = "id.pedido")
     private Set<CarPedido> itens = new HashSet<>();
-    // garantir a não x de itens
 
     public Pedido(Long id, Date instante, Cliente cliente) {
         super();
@@ -49,7 +48,7 @@ public class Pedido implements Serializable {
     public double getValorTotal() {
         double soma = 0.0;
         for (CarPedido ip : itens) {
-            soma = soma + ip.getPreco();
+            soma = soma + ip.getSubTotal();
         }
         return soma;
     }
